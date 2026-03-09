@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Love</title>
+
 <style>
 body{
     margin:0;
@@ -13,11 +14,13 @@ body{
     height:100vh;
     overflow:hidden;
 }
+
 #slideshow{
     position:relative;
     width:90%;
     height:90%;
 }
+
 #slideshow img{
     position:absolute;
     width:100%;
@@ -26,10 +29,12 @@ body{
     opacity:0;
     transition:opacity 2s;
 }
+
 #slideshow img.active{
     opacity:1;
 }
 </style>
+
 </head>
 
 <body>
@@ -37,3 +42,28 @@ body{
 <div id="slideshow">
 <img src="resim1.jpg" class="active">
 <img src="resim2.jpg">
+<img src="resim3.jpg">
+<img src="resim4.jpg">
+<img src="resim5.jpg">
+<img src="resim6.jpg">
+<img src="resim7.jpg">
+<img src="resim8.jpg">
+</div>
+
+<audio autoplay loop>
+<source src="sarki4.m4a" type="audio/mp4">
+</audio>
+
+<script>
+let slides = document.querySelectorAll("#slideshow img");
+let index = 0;
+
+setInterval(() => {
+slides[index].classList.remove("active");
+index = (index + 1) % slides.length;
+slides[index].classList.add("active");
+}, 4000);
+</script>
+
+</body>
+</html>
